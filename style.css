@@ -1,0 +1,947 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
+/* Header: nombre + menú en la misma altura */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 40px;
+}
+
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  text-decoration: none;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+nav a:hover{
+  color: cornflowerblue;
+}
+
+header a:hover{
+  color: cornflowerblue;
+}
+
+/* Título WORK centrado y gigante */
+.titulo-principal {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: clamp(60px, 18vw, 226px);
+  text-align: center;
+  line-height: 1;
+  padding: 60px 0;
+}
+
+/* Cuadrícula de trabajos */
+.grid-trabajos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+}
+
+.grid-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 98%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Capa negra transparente */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  transition: opacity 0.3s ease;
+
+  color: white;
+  font-size: 18px;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Hover */
+.grid-item:hover .overlay {
+  opacity: 1;
+}
+
+
+/* ABOUT */
+
+.sobremi {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 60px 40px;
+}
+
+.sobremi h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  text-transform: uppercase;
+  line-height: 1.3;
+  max-width: 700px;
+  margin: 0;
+}
+
+/* SECCION DE EXPERIENCES */
+
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  padding: 80px 40px;
+  background-color: #0d0d0d;
+}
+
+.info-column {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 200px;
+}
+
+.info-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: #9a9a9a;
+  letter-spacing: 1px;
+  margin-bottom: 24px;
+}
+
+.info-column ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.info-column li {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: #ffffff;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.info-title {
+  display: block;
+}
+
+.info-date {
+  display: block;
+  font-size: 16px;
+  color: #9a9a9a;
+  font-weight: 400;
+}
+
+
+
+/* MACA */
+
+.titulo-proyecto {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 40px;
+  margin-left: 40px;
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+
+
+.descripcion-proyecto {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 32px;
+  margin-left: 40px;
+  padding-top: 20px;
+  max-width: 500px;
+  opacity: 0.70 ;
+}
+
+.bloque-texto-logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 40px;
+  margin: 80px 40px;
+  gap: 100px;
+}
+
+
+
+.texto-proyecto {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  text-align: center;
+  opacity: 0.85;
+  padding-top: 30px;
+  text-transform: uppercase;
+}
+
+.galeria-proyecto {
+  margin: 40px;
+}
+
+.galeria-proyecto img {
+  width: 100%;
+  display: block;
+  border-radius: 8px;
+}
+
+.caption-proyecto {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  text-align: center;
+  max-width: 670px;
+  margin: 40px auto;
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+
+
+
+
+
+/* MACA - Galería mosaico */
+
+.galeria-mosaico {
+  display: grid;
+  grid-template-columns: 280px 1fr 1fr;
+  grid-template-areas:
+    "banner texto texto"
+    "banner girl  city"
+    "banner stats info"
+    "banner menu  menu";
+  gap: 20px;
+  max-width: 1100px;
+  margin: 60px auto;
+}
+
+.img-banner {
+  grid-area: banner;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.texto-galeria {
+  grid-area: texto;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #fff;
+  margin: 0;
+  opacity: 0.85;
+}
+
+.img-girl {
+  grid-area: girl;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.img-city {
+  grid-area: city;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.img-stats {
+  grid-area: stats;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.img-info {
+  grid-area: info;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.img-menu {
+  grid-area: menu;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.web_MACA {
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 40px;
+}
+
+.web_MACA .img-info {
+  width: 50%;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+
+/* TABLET (iPad) */
+@media (max-width: 1024px) {
+
+  .titulo-proyecto {
+    font-size: 32px;
+    margin-left: 30px;
+  }
+
+  .descripcion-proyecto {
+    font-size: 18px;
+    margin-left: 30px;
+    max-width: 100%;
+  }
+
+  .bloque-texto-logo {
+    margin: 60px 30px;
+    gap: 40px;
+  }
+
+  .logo-proyecto {
+    max-width: 250px;
+  }
+
+  .texto-proyecto {
+    font-size: 18px;
+  }
+
+  .galeria-proyecto {
+    margin: 30px;
+  }
+
+  .galeria-mosaico {
+    grid-template-columns: 200px 1fr 1fr;
+    max-width: 90%;
+    gap: 16px;
+    margin: 40px auto;
+  }
+
+  .img-girl,
+  .img-city {
+    height: 260px;
+  }
+
+  .web_MACA {
+    padding: 0 30px;
+    gap: 16px;
+  }
+
+  .web_MACA .img-info {
+    height: 320px;
+  }
+}
+
+/* CELULAR */
+@media (max-width: 600px) {
+
+  .titulo-proyecto {
+    font-size: 32px;
+    margin-left: 20px;
+    padding-top: 30px;
+  }
+
+  .descripcion-proyecto {
+    font-size: 24px;
+    margin-left: 20px;
+    padding-top: 10px;
+  }
+
+  .bloque-texto-logo {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 40px 20px;
+    gap: 20px;
+    padding-top: 20px;
+  }
+
+  .logo-proyecto {
+    max-width: 180px;
+  }
+
+  .texto-proyecto {
+    font-size: 18px;
+    padding-top: 10px;
+  }
+
+  .galeria-proyecto {
+    margin: 20px;
+  }
+
+  .caption-proyecto {
+    font-size: 18px;
+    max-width: 90%;
+    margin: 30px auto;
+  }
+
+  .galeria-mosaico {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "banner"
+      "texto"
+      "girl"
+      "city"
+      "stats"
+      "info"
+      "menu";
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 30px auto;
+    gap: 16px;
+  }
+
+  .texto-galeria {
+    text-align: center;
+  }
+
+
+  .img-banner {
+    display: none;
+  }
+
+  .img-girl,
+  .img-city {
+    height: 220px;
+  }
+
+  .web_MACA {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  .web_MACA .img-info {
+    width: 100%;
+    height: 250px;
+  }
+}
+
+
+/* HANNIBALL - RED DRAGON */
+
+.hanipics {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 100%;
+  margin: 60px 0;
+  padding: 0 40px;
+}
+
+.hanipics img {
+  width: 100%;
+  height: 450px;
+  object-fit: contain;
+  border-radius: 4px;
+  display: block;
+}
+
+
+/* HANNIBALL - RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .hanipics {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 30px;
+    gap: 16px;
+  }
+
+  .hanipics img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hanipics {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 16px;
+    margin: 40px auto;
+  }
+
+  .hanipics img {
+    height: 250px;
+  }
+}
+
+
+
+/* HEAVEN OR HELL */
+
+.galeria-hell {
+  max-width: 1100px;
+  margin: 60px auto;
+  padding: 0 40px;
+}
+
+.img-full {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.grid2x2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.grid2x2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+
+
+/* HEAVEN OR HELL - RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .galeria-hell {
+    padding: 0 30px;
+  }
+
+  .grid2x2 img {
+    height: 280px;
+  }
+}
+
+@media (max-width: 600px) {
+  .galeria-hell {
+    padding: 0 20px;
+    margin: 40px auto;
+  }
+
+  .grid2x2 img {
+    height: 180px;
+  }
+}
+
+
+
+/* Q PERRO PAN - MOSAICO LIBRE */
+
+.mosaico-libre {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 100%;
+  margin: 60px 0;
+  padding: 0 40px;
+}
+
+.mosaico-libre img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 4px;
+}
+
+.descripcion-ancha {
+  max-width: 900px;
+}
+
+
+.link-drive {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+  margin: 20px 40px 0;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 2px;
+}
+
+.link-drive:hover {
+  color: cornflowerblue;
+}
+
+/* Q PERRO PAN - RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .mosaico-libre {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    padding: 0 30px;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .mosaico-libre {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    margin: 40px auto;
+    gap: 16px;
+  }
+}
+
+
+
+
+
+/* CMR */
+
+.galeria-cmr {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 100%;
+  margin: 60px 0;
+  padding: 0 40px;
+}
+
+.galeria-cmr img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+
+/* CMR - RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .galeria-cmr,
+  .galeria-cmr-verticales {
+    padding: 0 30px;
+    gap: 16px;
+  }
+
+  .galeria-cmr-verticales img {
+    height: 400px;
+  }
+}
+
+@media (max-width: 600px) {
+  .galeria-cmr,
+  .galeria-cmr-verticales {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 16px;
+  }
+
+  .galeria-cmr {
+    margin: 40px 0 20px;
+  }
+
+  .galeria-cmr-verticales {
+    margin: 20px 0 40px;
+  }
+
+  .galeria-cmr-verticales img {
+    height: 350px;
+  }
+}
+
+
+/* LIGHTBOX */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.galeria-cmr img {
+  cursor: pointer;
+}
+
+
+
+
+
+/* MASONRY - estilo Pinterest */
+
+.masonry {
+    column-count: 4;
+    column-gap: 20px;
+    max-width: 100%;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+
+.masonry img,
+.masonry video {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    break-inside: avoid;
+}
+
+.masonry img {
+  cursor: pointer;
+}
+
+
+.lightbox video {
+  max-width: 90%;
+  max-height: 90%;
+  display: none;
+}
+
+
+/* MASONRY - RESPONSIVE */
+
+@media (max-width: 1024px) {
+  .masonry {
+    column-count: 3;
+    padding: 0 30px;
+    column-gap: 16px;
+  }
+
+  .masonry img {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .masonry {
+    column-count: 2;
+    padding: 0 20px;
+    column-gap: 12px;
+  }
+
+  .masonry img {
+    margin-bottom: 12px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SECCION DEL FOOTER */
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 45px;
+}
+
+.footer-contact {
+  flex: 1 1 400px;
+}
+
+.footer-contact h2 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 900;
+  font-size: clamp(60px, 10vw, 226px);
+  line-height: 1;
+  color: #ffffff;
+  padding-left: 30px;
+}
+
+.footer-socials {
+  flex: 0 1 auto;
+  text-align: right;
+}
+
+.socials-label {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #ffffff;
+  opacity: 60%;
+  margin-bottom: 8px;
+}
+
+.footer-socials ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.footer-socials li {
+  margin-top: 4px;
+}
+
+.footer-socials a {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.footer-socials a:hover{
+  color: cornflowerblue;
+}
+
+
+
+/* Botón hamburguesa: oculto en desktop */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 32px;
+  height: 32px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #ffffff;
+}
+
+header {
+  position: relative;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 576px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column;
+    background-color: #0d0d0d;
+    padding: 20px 30px;
+    gap: 16px;
+    align-items: flex-end;
+    border: 1px solid #2a2a2a;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 24px;
+  }
+
+  /* el resto de tus reglas de celular que ya tenías */
+  .sobremi {
+    padding: 40px 24px;
+  }
+
+  .footer-socials {
+    text-align: left;
+  }
+
+  .footer-contact h2 {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid-trabajos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 24px;
+  }
+}
