@@ -794,6 +794,11 @@ header a:hover{
   }
 }
 
+@media (max-width: 1024px) {
+  .masonry video {
+    display: none;
+  }
+}
 
 
 

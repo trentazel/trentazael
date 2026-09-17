@@ -31,6 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   galleryVideos.forEach(video => {
     video.style.cursor = 'pointer';
     video.addEventListener('click', () => {
+      if (window.innerWidth <= 1024) return;
+
       const source = video.querySelector('source').src;
       lightboxImg.style.display = 'none';
       lightboxVideo.style.display = 'block';
